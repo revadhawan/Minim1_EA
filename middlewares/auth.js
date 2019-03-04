@@ -9,7 +9,7 @@ function isAuth (req, res, next) {
     }
 
     /*Split convierte toda la cabezera en un array con tantos 
-    elementos como espacios hay = el segundo elemento contiene el token*/
+    elementos como espacios hay = [1] el segundo elemento contiene el token*/
     const token = req.headers.authorization.split(" ")[1]
     
    services.decodeToken(token)

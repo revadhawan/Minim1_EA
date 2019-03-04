@@ -3,9 +3,9 @@
 const Product = require('../models/product')
 
 
-/*"Url a la que queremos que escuche este método,
-Devuelve un callback con las dos variables petición y respuesta */
+//GET ALL PRODUCTS
 function getProducts (req, res) {
+    //Devuelve un callback con las dos variables petición y respuesta
     Product.find({}, (err, products) => {
         if (err) return res.status(500).send({message: `Error al realizar la petición: ${err} `})
         if (!products) return res.status(404).send({message: 'No existen productos'})
@@ -15,6 +15,7 @@ function getProducts (req, res) {
     })
 }
 
+//GET PRODUCT BY ID
 function getProduct (req,res) {
     let productId = req.params.productId
     
@@ -26,7 +27,7 @@ function getProduct (req,res) {
     })
 }
 
-
+//CREATE PRODUCT
 function saveProduct (req, res) {
     console.log('POST /api/product')
     console.log(req.body) //Mostrar todo el cuerpo (body)
@@ -41,10 +42,11 @@ function saveProduct (req, res) {
     product.save((err, productStored) => {
         if (err) res.status(500).send({message: `Error al salvar en la BBDD: ${err}`})
     
-        res.status(200).send({product: productStored})
+        res.status(200).send(productStored)
     })
 }
 
+//UPDATE PRODUCT
 function updateProduct (id) {
     let productId = req.params.productId
     let update = req.body
@@ -52,10 +54,11 @@ function updateProduct (id) {
     Product.findByIdAndUpdate(productId, update, (err, productUpdated) => {
         if (err) res.status(500).send({message: `Error al actualizarlo: ${err}`})
     
-        res.status(200).send({product: productUpdated})
+        res.status(200).send(productUpdated)
     })
 }
 
+//DELETE PRODUCT
 function deleteProduct (id) {
     let productId = req.params.productId
 

@@ -7,10 +7,10 @@ const crypto = require('crypto')
 
 //Modelo usuario
 const UserSchema = new Schema ({
-    email: { type: String, unique:true, lowercase: true},
+    email: { type: String, unique:true, required: true ,lowercase: true},
     displayName: String,
     avatar: String,
-    password: { type: String, select: false }, //Para que al hacer un GET no se envíe la contraseña
+    password: { type: String, required: true, select: false }, //Para que al hacer un GET no se envíe la contraseña
     signupDate: { type: Date, default: Date.now() },
     lastLogin: Date
 })
@@ -18,8 +18,6 @@ const UserSchema = new Schema ({
 //Función que se ejecuta antes de que se salve
 UserSchema.pre('save', (next) => {
     let user = this
-    //Si el usuario no ha modificado el password = terminar función y pase al siguiente nivel (next)
-        //if (!user.isModified('password')) return next()
 
     //Genera un salt de 10 = num de dígitos aleatorios que se le agrega al hash
     bcrypt.genSalt(10, (err, salt) => {

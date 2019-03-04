@@ -11,7 +11,7 @@ function createToken (user) {
         exp: moment().add(14, 'days').unix(), //FechaExpiraciónToken = 14 días
     }
 
-    //Codificar token
+    //Retorna el token codificado
     return jwt.encode(payload, config.SECRET_TOKEN)
 }
 
