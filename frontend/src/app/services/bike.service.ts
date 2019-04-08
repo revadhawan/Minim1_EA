@@ -22,8 +22,8 @@ export class BikeService {
     return this.http.post<Bike>(this.URL_API, Bike);
   }
 
-  //GET BIKES
+  /*GET BIKES
   getBikes():Observable<Bike[]>{
     return this.http.get<Bike[]>(this.URL_API);
-  }
+  }*/
 }

@@ -34,7 +34,7 @@ export class StationService {
   }
 
   //GET A BIKE'S DETAILS FROM A STATION
-  getBikeDetail(_id: string): Observable<Station>{
+  getBikes(_id: string): Observable<Station>{
     return this.http.get<Station>(this.URL_API + + `/bikedetail/${_id}`)
   }
 

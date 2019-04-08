@@ -50,7 +50,7 @@ stationCtrl.getStationDetail = async (req, res) => {
 
 
 //GET STATION DETAILS
-stationCtrl.getBikeDetail = async (req, res) => {
+stationCtrl.getBikes = async (req, res) => {
     try {
         let station = await Station.findById(req.params.id).populate('bike');
         if(!station){

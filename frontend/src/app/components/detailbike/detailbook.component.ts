@@ -9,9 +9,9 @@ import { NgForm } from '@angular/forms';
 declare var M: any;
 
 @Component({
-  selector: 'app-detailbike',
-  templateUrl: './detailbike.component.html',
-  //styleUrls: ['./detailbike.component.scss']
+  selector: 'app-stations',
+  templateUrl: './stations.component.html',
+  //styleUrls: ['./stations.component.scss']
 })
 export class DetailbikeComponent implements OnInit {
 
@@ -40,7 +40,7 @@ export class DetailbikeComponent implements OnInit {
   }
 
   getBikeStationDetail(_id: string){
-    this.stationService.getBikeDetail(_id)
+    this.stationService.getBikes(_id)
     .subscribe(res =>{
       this.station = res;
       console.log(res);

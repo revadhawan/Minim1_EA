@@ -13,7 +13,7 @@ api.post('/bikes', bikeCtrl.postBike)
 //GET
 api.get('/stations', stationCtrl.getStations);
 api.get('/stations/:id', stationCtrl.getStationDetail);
-api.get('/stations/bikedetail/:id', stationCtrl.getBikeDetail);
+api.get('/stations/bikedetail/:id', stationCtrl.getBikes);
 api.get('/bikes', bikeCtrl.getBikes);
 
 //PUT
