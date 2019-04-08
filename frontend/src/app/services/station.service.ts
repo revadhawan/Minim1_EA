@@ -30,7 +30,7 @@ export class StationService {
 
   //ADD BIKE
   addBike(stationID: string, bikeID: string){
-    return this.http.post(this.URL_API, {stationID, bikeID});
+    return this.http.post(this.URL_API + '/addbike', {stationID, bikeID});
   }
 
   //GET STATION DETAILS

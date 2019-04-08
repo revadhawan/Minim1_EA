@@ -9,7 +9,7 @@ const api = express.Router()
 //POST
 api.post('/stations', stationCtrl.postStation)
 api.post('/bikes', bikeCtrl.postBike)
-api.post('/stations/addbike', stationCtrl.postStationBike)
+api.post('/stations/addbike/:bikeID', stationCtrl.postStationBike)
 
 //GET
 api.get('/stations', stationCtrl.getStations)

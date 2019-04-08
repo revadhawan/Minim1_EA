@@ -80,7 +80,7 @@ stationCtrl.postStationBike = async (req, res) => {
         const bikeId = req.body.bikeId;
         const stationId = req.body.stationId;
 
-        console.log(`tationID: ${stationId}, BikeID: ${bikeId}`);
+        console.log(`StationID: ${stationId}, BikeID: ${bikeId}`);
 
         let bikeFound = await Bike.findById(bikeId);
 

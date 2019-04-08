@@ -8,13 +8,13 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let bike of station.bike">
+      <tr *ngFor="let bike of bikesList2">
         <td>{{bike.name }}</td>
         <td>{{bike.kms}}</td>
         <td>{{bike.description}}</td>
         <td>
-            <button class="btn btn-primary" [routerLink]="[]">View</button> 
-         </td>
+            <button (click)="addBike(bike._id)">Delete</button>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -31,12 +31,12 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let bike of bikesList">
+      <tr *ngFor="let bike of bikesList1">
         <td>{{bike.name }}</td>
         <td>{{bike.kms}}</td>
         <td>{{bike.description}}</td>
         <td>
-            <button (click)="addBike(bike._id)">Add Bike</button>
+            <button (click)="addBike(bike._id)">Add</button>
         </td>
       </tr>
     </tbody>

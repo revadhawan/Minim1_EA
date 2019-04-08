@@ -24,7 +24,7 @@ bikeCtrl.postBike = async (req, res) => {
 
 //GET AVAILABLE BIKES
 bikeCtrl.getAvailableBikes = async (req, res) => {
-    const bikes = await Bike.find()
+    const bikes = await Bike.find({state: true})
     res.json(bikes)
 }
 

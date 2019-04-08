@@ -16,7 +16,8 @@ import {Router} from '@angular/router';
 
 export class BikeComponent implements OnInit {
   station: Station
-  bikesList: Bike[] = []  
+  bikesList1: Bike[] = []  
+  bikesList2: Bike[] = []
   selectedbike: Bike
   unavailablebikes: Bike[]
 
@@ -44,7 +45,7 @@ export class BikeComponent implements OnInit {
   getAvailableBikes(){
     this.bikeService.getAvailableBikes()
       .subscribe(res => {
-        this.bikesList= res;
+        this.bikesList1= res;
         console.log(res);
       });
   }
@@ -52,7 +53,7 @@ export class BikeComponent implements OnInit {
   getUnavailableBikes(){
     this.bikeService.getUnavailableBikes()
       .subscribe(res => {
-        this.bikesList= res;
+        this.bikesList2= res;
         console.log(res);
       });
   }
