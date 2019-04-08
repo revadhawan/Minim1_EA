@@ -5,10 +5,14 @@ const express = require('express')
 const BodyParser = require('body-parser')
 const hbs = require('express-handlebars')
 const app = express()
-const api = require('./routes')
+const cors = require ('cors')
+const api = require('./backend/routes')
 
 //Método use
 app.use(BodyParser.urlencoded({ extended: false}))
+
+//Middlewares
+app.use(cors({origin: 'http://localhost:4200'}))
 
 //Permitir peticiones con formato de mensaje JSON
 app.use(BodyParser.json())

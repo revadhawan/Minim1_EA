@@ -1,0 +1,20 @@
+<div class="col s7">
+  <table class="striped highlight black-text">
+    <thead>
+      <th>Station</th>
+      <th>State</th>
+      <th>Description</th>
+      <th>View</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let station of stationService.stations">
+        <td>{{station.name }}</td>
+        <td>{{station.state}}</td>
+        <td>{{station.description}}</td>
+        <td>
+          <button class="btn centre" (click)="getBikeDetail(station)">View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

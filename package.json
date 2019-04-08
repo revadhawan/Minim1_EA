@@ -7,11 +7,12 @@
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Reva Dhawan",
+  "station": "Reva Dhawan",
   "license": "MIT",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",

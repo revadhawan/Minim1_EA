@@ -5,6 +5,8 @@ const mongoose = require('mongoose')
 const app = require('./app')
 const config = require('./config')
 
+const URI = 'mongodb://localhost/minimo1'
+
 mongoose.connect(config.db, {useNewUrlParser: true }, (err, req) => {
     if (err) {
         return console.log(`Error al conectar a la BBDD: ${err}`)

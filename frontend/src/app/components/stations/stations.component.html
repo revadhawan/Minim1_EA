@@ -1,0 +1,44 @@
+<div class="col s7">
+  <table name="AvailableBikes" class="striped highlight black-text">
+    <thead>
+      <th>Bike</th>
+      <th>State</th>
+      <th>Description</th>
+      <th>Operation</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bike of bikeService.bikes"> 
+        <td>{{ bike.name }}</td>
+        <td>{{ bike.state}}</td>
+        <td>{{ bike.description}}</td>
+        <td>
+          <a (click)="deleteBike(bike)">
+            <i class="material-icons">DELETE</i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <table name="UnavailableBikes" class="striped highlight black-text">
+    <thead>
+      <th>Bike</th>
+      <th>State</th>
+      <th>Description</th>
+      <th>Operation</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bike of bikeService.bikes">
+        <td>{{ bike.name }}</td>
+        <td>{{ bike.state}}</td>
+        <td>{{ bike.description}}</td>
+        <td>
+          <a (click)="availableBike(bike)">
+            <i class="material-icons">DELETE</i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

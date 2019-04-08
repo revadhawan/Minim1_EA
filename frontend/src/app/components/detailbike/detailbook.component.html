@@ -1,0 +1,68 @@
+<div class="container">
+
+
+  <div class="row">
+    <div class="col s7">
+      <h2>Bikes details of {{station.name}}</h2>
+      <h2>{{station.name}}</h2>
+      <p><b>ID:</b> {{station._id}}</p>
+      <b>Bikes:</b>
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Id</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bike of station.bike">
+            <td>{{bike.name}}</td>
+            <td>{{bike._id}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <form #newBikeForm="ngForm" (ngSubmit)="addbike(newBikeForm)">
+              <input type="text" name="_id" #_id="ngModel" [(ngModel)]="bikeService.selectedBike._id" placeholder="Insert the new bike ID">
+          </form>
+        </div>
+
+        <div class="card-action">
+          <div class="input-field col s12">
+            <button class="btn right" (click)="addbike(newBikeForm)">Add new bike</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s7">
+        
+        <h2>Bikes list</h2>
+
+        <table>
+
+          <thead>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Add</th>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let bike of bikesList">
+              <td>{{bike.name}}</td>
+              <td>{{bike._id}}</td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
