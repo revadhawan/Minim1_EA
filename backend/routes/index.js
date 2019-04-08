@@ -9,15 +9,16 @@ const api = express.Router()
 //POST
 api.post('/stations', stationCtrl.postStation)
 api.post('/bikes', bikeCtrl.postBike)
+api.post('/stations/addbike', stationCtrl.postStationBike)
 
 //GET
-api.get('/stations', stationCtrl.getStations);
-api.get('/stations/:id', stationCtrl.getStationDetail);
-api.get('/stations/bikedetail/:id', stationCtrl.getBikes);
-api.get('/bikes', bikeCtrl.getBikes);
+api.get('/stations', stationCtrl.getStations)
+api.get('/stations/bikedetail/:stationId', stationCtrl.getStationBikeDetail);
+api.get('/bikes/available', bikeCtrl.getAvailableBikes)
+api.get('/bikes/unavailable', bikeCtrl.getUnavailableBikes)
 
 //PUT
-api.put('/stations', stationCtrl.addBike);
-api.put('/stations/bikedetail/:id', bikeCtrl.deleteBike);
+api.put('/stations/:stationID/deletebike/:bikeID', stationCtrl.addBike)
+
 
 module.exports = api

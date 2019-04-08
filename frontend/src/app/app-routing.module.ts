@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainComponent } from './components/main/main.component';
-//import { StationsComponent } from './components/stations/stations.component';
+import { BikeComponent } from "./components/bike/bike.component";
+import { StationComponent } from "./components/station/station.component";
 
 const routes: Routes = [
-  //{path: '/stations/bikedetail/:id', component: StationsComponent},
-  {path: 'main', component: MainComponent},
+  { path: 'api/bike/:id', component: BikeComponent },
+  { path: 'api/station', component: StationComponent },
+  { path: '', redirectTo: '/api/station', pathMatch: 'full' }
+
 ];
 
 @NgModule({

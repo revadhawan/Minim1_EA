@@ -1,25 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailbikeComponent } from './detailbike.component';
+import { BikeComponent } from './bike.component';
 
-describe('DetailbikeComponent', () => {
-  let component: DetailbikeComponent;
-  let fixture: ComponentFixture<DetailbikeComponent>;
+describe('BikeComponent', () => {
+  let component: BikeComponent;
+  let fixture: ComponentFixture<BikeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DetailbikeComponent ]
+      declarations: [ BikeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailbikeComponent);
+    fixture = TestBed.createComponent(BikeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should post', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -24,22 +24,20 @@ export class StationService {
   }
 
   //GET STATIONS
-  getStation():Observable<Station[]>{
+  getStations():Observable<Station[]>{
     return this.http.get<Station[]>(this.URL_API)
   }
 
-  //GET STATION'S DETAILS
-  getStationDetail(_id: string): Observable<Station>{
-    return this.http.get<Station>(this.URL_API + `/${_id}`)
-  }
-
-  //GET A BIKE'S DETAILS FROM A STATION
-  getBikes(_id: string): Observable<Station>{
-    return this.http.get<Station>(this.URL_API + + `/bikedetail/${_id}`)
-  }
-
-  //ADD A BIKE TO AN STATION
+  //ADD BIKE
   addBike(stationID: string, bikeID: string){
-    return this.http.put(this.URL_API + '/', {"stationID": stationID, "BikeID": bikeID})
+    return this.http.post(this.URL_API, {stationID, bikeID});
   }
+
+  //GET STATION DETAILS
+  getStationBikeDetail(_id: string):Observable<Station>{
+    return this.http.get<Station>(this.URL_API + `/bikedetail/${_id}`);
+  }
+
+
+
 }

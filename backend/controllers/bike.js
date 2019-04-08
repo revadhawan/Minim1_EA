@@ -22,23 +22,16 @@ bikeCtrl.postBike = async (req, res) => {
     }
 }
 
-//GET ALL BIKES
-bikeCtrl.getBikes = async (req, res) => {
+//GET AVAILABLE BIKES
+bikeCtrl.getAvailableBikes = async (req, res) => {
     const bikes = await Bike.find()
     res.json(bikes)
 }
 
-//DELETE A BIKE
-bikeCtrl.deleteBike = async (req,res) => {
-    const bike = await Bike.findById(req.params.id);
-    console.log(req.params.id);
-    console.log(bike.state)
-
-    let bikeUpdated = Bike.findOneAndReplace({_id: bike._id}, {state: true, new: false})
-         
-    res.status(200).send({message: "Eliminado"})
-    console.log(bike.state)
+//GET UNAVAILABLE BIKES
+bikeCtrl.getUnavailableBikes = async (req, res) => {
+    const bikes = await Bike.find({state: false})
+    res.json(bikes)
 }
-
 
 module.exports = bikeCtrl

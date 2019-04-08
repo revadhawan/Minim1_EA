@@ -9,21 +9,25 @@ import { Observable } from 'rxjs'
 })
 export class BikeService {
 
-  selectedBike: Bike;
-  Bikes: Bike[];
-  readonly URL_API = 'http://localhost:3000/api/bikes';
+  bike: Bike[]
+  selectedbike: Bike
+  readonly URL_API = 'http://localhost:3001/api/bikes';
 
   constructor(private http: HttpClient) {
-    this.selectedBike = new Bike;
+    this.selectedbike = new Bike();
    }
 
-  //post BIKE
-  postBike (Bike: Bike):Observable<Bike>{
-    return this.http.post<Bike>(this.URL_API, Bike);
+  //GET AVAILABLE BIKES
+  getAvailableBikes():Observable<Bike[]>{
+    return this.http.get<Bike[]>(this.URL_API + `/available`);
   }
 
-  /*GET BIKES
-  getBikes():Observable<Bike[]>{
-    return this.http.get<Bike[]>(this.URL_API);
-  }*/
+  //GET UNAVAILABLE BIKES
+  getUnavailableBikes():Observable<Bike[]>{
+    return this.http.get<Bike[]>(this.URL_API + `/unavailable`);
+  }
+
+  
+
+
 }

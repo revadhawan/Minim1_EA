@@ -4,8 +4,7 @@ const { Schema } = mongoose;
 const bikeSchema = new Schema({
     name: {type: String, required: true},
     kms: {type: String, required: true},
-    //state: {type: String, enum: ['available', 'NA']},
-    state: {type: Boolean},
+    state: {type: Boolean, default: false},
     description: {type: String}   
 })
 

@@ -7,12 +7,12 @@
       <th>View</th>
     </thead>
     <tbody>
-      <tr *ngFor="let station of stationService.stations">
+      <tr *ngFor="let station of stationsList">
         <td>{{station.name }}</td>
         <td>{{station.state}}</td>
         <td>{{station.description}}</td>
         <td>
-          <button class="btn centre" (click)="getBikes(station)">View</button>
+           <button class="btn btn-primary" [routerLink]="['/api/bike', station._id]">View</button> 
         </td>
       </tr>
     </tbody>
